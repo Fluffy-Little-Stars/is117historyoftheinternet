@@ -6,20 +6,122 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../css/bootstrap.css">
+	
+	<!-- Internal CSS -->
+	<style>
+		body{
+			margin-top: 100px;
+			background-color: slategray;
+		}
+		.timeline {
+			padding: 50px 0;
+			position: relative;
+		}
+		.timeline-nodes {
+				padding-bottom: 25px;
+				position: relative;
+		}
+		.timeline-nodes:nth-child(even) {
+			flex-direction: row-reverse;
+		}
+		.timeline h3, .timeline p {
+			padding: 5px 15px;
+		} 
+		.timeline h3{
+			font-weight: lighter;
+			background: #958a56;
+		}
+		.timeline p, .timeline time {
+			color: #fff
+		}
+		.timeline::before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 50%;
+			width: 0;
+			border-left: 2px dashed #958a56;
+			height: 100%;
+			z-index: 1;
+			transform: translateX(-50%);
+		}
+		.timeline-content {
+			border-style: solid;
+			border-width: 1px;
+			position: relative;
+			border-radius: 0 0 10px 10px;
+			box-shadow: 0px 3px 25px 0px rgba(10, 55, 90, 0.2)
+		}
+		.timeline-nodes:nth-child(odd) h3, .timeline-nodes:nth-child(odd) p {
+			text-align: right;
+		}
+		.timeline-nodes:nth-child(odd) .timeline-date {
+			text-align: left;
+		}
+
+		.timeline-nodes:nth-child(even) .timeline-date {
+			text-align: right;
+		}
+		.timeline-nodes:nth-child(odd) .timeline-content::after {
+			content: "";
+			position: absolute;
+			top: 5%;
+			left: 100%;
+			width: 0;
+			border-left: 10px solid #958a56;
+			border-top: 10px solid transparent;
+			border-bottom: 10px solid transparent;
+		}
+		.timeline-nodes:nth-child(even) .timeline-content::after {
+			content: "";
+			position: absolute;
+			top: 5%;
+			right: 100%;
+			width: 0;
+			border-right: 10px solid #958a56;
+			border-top: 10px solid transparent;
+			border-bottom: 10px solid transparent;
+		}
+		.timeline-image {
+			position: relative;
+			z-index: 100;
+		}
+		.timeline-image::before {
+			content: "";
+			width: 80px;
+			height: 80px;
+			border: 2px dashed #958a56;
+			border-radius: 50%;
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+/*			background-color: #fff;*/
+			z-index: 1;
+
+
+		}
+		.timeline-image img {
+			position: relative;
+			z-index: 100;
+		}
+	</style>
 
     <title>HotI: Invention of the Internet</title>
 </head>
 <body>
 
     <!-- Navigation Bar -->
-    <nav>
-        <div class="navbar fixed-top navbar-light navbar-expand-lg justify-content-center" style="font-size: 35px; vertical-align: center;">
+    <nav class=container>
+        <div class="navbar fixed-top navbar-expand-lg navbar-light navbar-center justify-content-center" style="font-size: 35px;">
             <ul class="navbar-nav">
                 <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="ourteam.html" class="nav-link">Our Team</a></li>
                 <li class="nav-item"><a href="../index.html" class="nav-link"> <img src="../icons/Website_Icon.svg" alt="..." width="75px" height="75px"> </a></li>
                 <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History of the Internet</a>
-                    <div class="dropdown-menu" style="font-size: 30px;">
+                    <div class="dropdown-menu" style="font-size: 16px;">
                         <a href="dotcombubble.html" class="dropdown-item">Dot Com Bubble</a>
                         <a href="people.html" class="dropdown-item">People Page</a>
                         <a href="internetsearch.html" class="dropdown-item">Internet Search Page</a>
@@ -32,6 +134,135 @@
         </div>
     </nav>
     <!-- END: Navigation Bar -->
+	
+	<!-- Main Body -->
+	<div class="container">
+		<div class="col-xl-12">
+			 <div class="timeline">
+				<div class="row no-gutters justify-content-end justify-content-md-around align-items-start  timeline-nodes">
+				  <div class="col-10 col-md-5 order-3 order-md-1 timeline-content">
+					<h3 class=" text-light">1960's</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, eaque amet deleniti hic quas qui cumque delectus aliquid, eius quia quod, quae, aliquam aspernatur facilis. Minima quod corporis dignissimos porro.</p>
+				  </div>
+				  <div class="col-2 col-sm-1 px-md-3 order-2 timeline-image text-md-center">
+					<img src="img/img13.png" class="img-fluid" alt="img">
+				  </div>
+				  <div class="col-10 col-md-5 order-1 order-md-3 py-3 timeline-date">
+				  </div>
+				</div>
+				<div class="row no-gutters justify-content-end justify-content-md-around align-items-start  timeline-nodes">
+				  <div class="col-10 col-md-5 order-3 order-md-1 timeline-content">
+					<h3 class=" text-light">1962</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, eaque amet deleniti hic quas qui cumque delectus aliquid, eius quia quod, quae, aliquam aspernatur facilis. Minima quod corporis dignissimos porro.</p>
+				  </div>
+				  <div class="col-2 col-sm-1 px-md-3 order-2 timeline-image text-md-center">
+					<img src="img/img13.png" class="img-fluid" alt="img">
+				  </div>
+				  <div class="col-10 col-md-5 order-1 order-md-3 py-3 timeline-date">
+					<time></time>
+				  </div>
+				</div>
+				<div class="row no-gutters justify-content-end justify-content-md-around align-items-start  timeline-nodes">
+				  <div class="col-10 col-md-5 order-3 order-md-1 timeline-content">
+					<h3 class=" text-light">1966</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, eaque amet deleniti hic quas qui cumque delectus aliquid, eius quia quod, quae, aliquam aspernatur facilis. Minima quod corporis dignissimos porro.</p>
+				  </div>
+				  <div class="col-2 col-sm-1 px-md-3 order-2 timeline-image text-md-center">
+					<img src="img/img13.png" class="img-fluid" alt="img">
+				  </div>
+				  <div class="col-10 col-md-5 order-1 order-md-3 py-3 timeline-date">
+					<time></time>
+				  </div>
+				</div>
+				<div class="row no-gutters justify-content-end justify-content-md-around align-items-start  timeline-nodes">
+				  <div class="col-10 col-md-5 order-3 order-md-1 timeline-content">
+					<h3 class=" text-light">1969</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, eaque amet deleniti hic quas qui cumque delectus aliquid, eius quia quod, quae, aliquam aspernatur facilis. Minima quod corporis dignissimos porro.</p>
+				  </div>
+				  <div class="col-2 col-sm-1 px-md-3 order-2 timeline-image text-md-center">
+					<img src="img/img13.png" class="img-fluid" alt="img">
+				  </div>
+				  <div class="col-10 col-md-5 order-1 order-md-3 py-3 timeline-date">
+					<time></time>
+				  </div>
+				</div>
+				<div class="row no-gutters justify-content-end justify-content-md-around align-items-start  timeline-nodes">
+				  <div class="col-10 col-md-5 order-3 order-md-1 timeline-content">
+					<h3 class=" text-light">1971</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, eaque amet deleniti hic quas qui cumque delectus aliquid, eius quia quod, quae, aliquam aspernatur facilis. Minima quod corporis dignissimos porro.</p>
+				  </div>
+				  <div class="col-2 col-sm-1 px-md-3 order-2 timeline-image text-md-center">
+					<img src="img/img13.png" class="img-fluid" alt="img">
+				  </div>
+				  <div class="col-10 col-md-5 order-1 order-md-3 py-3 timeline-date">
+					<time></time>
+				  </div>
+				</div>
+				<div class="row no-gutters justify-content-end justify-content-md-around align-items-start  timeline-nodes">
+				  <div class="col-10 col-md-5 order-3 order-md-1 timeline-content">
+					<h3 class=" text-light">1971</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, eaque amet deleniti hic quas qui cumque delectus aliquid, eius quia quod, quae, aliquam aspernatur facilis. Minima quod corporis dignissimos porro.</p>
+				  </div>
+				  <div class="col-2 col-sm-1 px-md-3 order-2 timeline-image text-md-center">
+					<img src="img/img13.png" class="img-fluid" alt="img">
+				  </div>
+				  <div class="col-10 col-md-5 order-1 order-md-3 py-3 timeline-date">
+					<time></time>
+				  </div>
+				</div>
+				<div class="row no-gutters justify-content-end justify-content-md-around align-items-start  timeline-nodes">
+				  <div class="col-10 col-md-5 order-3 order-md-1 timeline-content">
+					<h3 class=" text-light">1972</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, eaque amet deleniti hic quas qui cumque delectus aliquid, eius quia quod, quae, aliquam aspernatur facilis. Minima quod corporis dignissimos porro.</p>
+				  </div>
+				  <div class="col-2 col-sm-1 px-md-3 order-2 timeline-image text-md-center">
+					<img src="img/img13.png" class="img-fluid" alt="img">
+				  </div>
+				  <div class="col-10 col-md-5 order-1 order-md-3 py-3 timeline-date">
+					<time></time>
+				  </div>
+				</div>
+				<div class="row no-gutters justify-content-end justify-content-md-around align-items-start  timeline-nodes">
+				  <div class="col-10 col-md-5 order-3 order-md-1 timeline-content">
+					<h3 class=" text-light">1983</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, eaque amet deleniti hic quas qui cumque delectus aliquid, eius quia quod, quae, aliquam aspernatur facilis. Minima quod corporis dignissimos porro.</p>
+				  </div>
+				  <div class="col-2 col-sm-1 px-md-3 order-2 timeline-image text-md-center">
+					<img src="img/img13.png" class="img-fluid" alt="img">
+				  </div>
+				  <div class="col-10 col-md-5 order-1 order-md-3 py-3 timeline-date">
+					<time></time>
+				  </div>
+				</div>
+				<div class="row no-gutters justify-content-end justify-content-md-around align-items-start  timeline-nodes">
+				  <div class="col-10 col-md-5 order-3 order-md-1 timeline-content">
+					<h3 class=" text-light">1992</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, eaque amet deleniti hic quas qui cumque delectus aliquid, eius quia quod, quae, aliquam aspernatur facilis. Minima quod corporis dignissimos porro.</p>
+				  </div>
+				  <div class="col-2 col-sm-1 px-md-3 order-2 timeline-image text-md-center">
+					<img src="img/img13.png" class="img-fluid" alt="img">
+				  </div>
+				  <div class="col-10 col-md-5 order-1 order-md-3 py-3 timeline-date">
+					<time></time>
+				  </div>
+				</div>
+				<div class="row no-gutters justify-content-end justify-content-md-around align-items-start  timeline-nodes">
+				  <div class="col-10 col-md-5 order-3 order-md-1 timeline-content">
+					<h3 class=" text-light">1993</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, eaque amet deleniti hic quas qui cumque delectus aliquid, eius quia quod, quae, aliquam aspernatur facilis. Minima quod corporis dignissimos porro.</p>
+				  </div>
+				  <div class="col-2 col-sm-1 px-md-3 order-2 timeline-image text-md-center">
+					<img src="img/img13.png" class="img-fluid" alt="img">
+				  </div>
+				  <div class="col-10 col-md-5 order-1 order-md-3 py-3 timeline-date">
+					<time></time>
+				  </div>
+				</div>
+			  </div> 
+		</div>
+		
+	</div>
+	
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
