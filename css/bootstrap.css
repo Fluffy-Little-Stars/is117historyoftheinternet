@@ -62,7 +62,11 @@ body {
   text-align: left;
   background-color: #fff;
 }
-
+div.information{
+  margin-left: 100px;
+  margin-right: 100px;
+  width: 1200px;
+}
 [tabindex="-1"]:focus {
   outline: 0 !important;
 }
